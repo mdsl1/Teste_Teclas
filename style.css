@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #87CEEB;
+    overflow: hidden;
+}
+
+.game-container {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #13818b;
+    margin: 0;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+#player {
+    position: absolute;
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    transition: bottom 0.3s ease-in-out;
+    background-size: cover;
+    bottom: 10px; /* Posição inicial do personagem */
+    left: 50px;
+}
+
+.standBy{
+    background: url("standby.gif") center;
+}
+
+.walking{
+    background: url("walking.gif") center;
+}
+
+.reversedJump {
+    transform: scaleX(-1) translateY(-150px);
+    animation: reverseJump 0.6s ease-out;
+}
+
+.reversed{
+    transform: scaleX(-1);
+}
+
+.jumping{
+    animation: jump 0.6s ease-out;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-150px); } /* Altura do pulo */
+    100% { transform: translateY(0); }
+}
+
+@keyframes reverseJump {
+    0% { transform: translateY(0) scaleX(-1); }
+    50% { transform: translateY(-150px) scaleX(-1); } /* Altura do pulo */
+    100% { transform: translateY(0) scaleX(-1); }
+}
+
