@@ -19,6 +19,23 @@ body {
     border: 2px solid black;
     overflow: hidden;
 }
+#sun{
+    width: 130px;
+    height: 130px;
+    background-image: linear-gradient(to right, #ffaa00, #ffdd00);
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+#floor{
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    height: 2.1vh;
+    background-image:linear-gradient(to right, #006900, #009100); 
+}
+
 
 #player {
     position: absolute;
@@ -32,11 +49,11 @@ body {
 }
 
 .standBy{
-    background: url("standby.gif") center;
+    background: url("Midias/standby.gif") center;
 }
 
 .walking{
-    background: url("walking.gif") center;
+    background: url("Midias/walking.gif") center;
 }
 
 .reversedJump {

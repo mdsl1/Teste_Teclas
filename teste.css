@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #87CEEB;
+    overflow: hidden;
+}
+
+.game-container {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #13818b;
+    margin: 0;
+    border: 2px solid black;
+    overflow: hidden;
+}
+#sun{
+    width: 130px;
+    height: 130px;
+    background-image: linear-gradient(to right, #ffaa00, #ffdd00);
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+#floor{
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    height: 5vh;
+    background: url("Midias/dungeonFloor.png") top;
+    background-size: contain;
+}
+.obstacle {
+    position: absolute;
+    width: 1px;
+}
+#obstacle1 {
+    left: 0;
+    bottom: 4.5vh;
+    height: 100vh;
+}
+#obstacle2 {
+    right: 0;
+    bottom: 4.5vh;
+    height: 60vh;
+}
+#obstacle3 {
+    left: 300px;
+    bottom: 4.5vh;
+    height: 80px;
+    background-color: #f00;
+    width: 60px;
+}
+
+
+
+
+#player {
+    position: absolute;
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+    transition: bottom 0.3s ease-in-out;
+    background-size: cover;
+    bottom: 4.3vh; /* Posição inicial do personagem */
+    left: 50px;
+}
+
+.standBy{
+    background: url("Midias/standby2.gif") center;
+    transform: scale(1.13);
+}
+
+.walking{
+    background: url("Midias/walking.gif") center;
+}
+
+.reversedJump {
+    transform: scaleX(-1) translateY(-150px);
+    animation: reverseJump 0.6s ease-out;
+}
+
+.reversed{
+    transform: scaleX(-1);
+}
+
+.jumping{
+    animation: jump 0.6s ease-out;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-150px); } /* Altura do pulo */
+    100% { transform: translateY(0); }
+}
+
+@keyframes reverseJump {
+    0% { transform: translateY(0) scaleX(-1); }
+    50% { transform: translateY(-150px) scaleX(-1); } /* Altura do pulo */
+    100% { transform: translateY(0) scaleX(-1); }
+}
+
